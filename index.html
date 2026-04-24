@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Air Quality Checker</title>
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+    height: auto; /* Change from 100vh to allow scrolling */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns to top instead of middle */
+    align-items: center;
+    padding: 40px 20px; /* More balanced padding */
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+
+        h1 {
+            color: white;
+            margin-bottom: 40px;
+            font-size: 36px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        input {
+            width: 250px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            background: rgba(255,255,255,0.8);
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Optional small weather icon style */
+        .icon {
+            font-size: 40px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .info {
+            margin-top: 30px;
+            width: 300px;
+            padding: 25px;
+            border-radius: 20px;
+
+            /* Glass effect */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            color: white;
+            display: none;
+            flex-direction: column;
+        }
+
+        .info h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Each row */
+        .aq-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 12px;
+            margin: 6px 0;
+
+            border-radius: 10px;
+            background: rgba(255,255,255,0.15);
+            transition: 0.3s;
+        }
+
+        /* Hover effect */
+        .aq-item:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.03);
+        }
+
+        /* Label */
+        .aq-item span {
+            font-size: 16px;
+        }
+
+        /* Value highlight */
+        .value {
+            font-weight: bold;
+            color: rgb(255, 0, 38);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>☁️ Air Quality Checker</h1>
+    <form id="form">
+        <div class="card">
+            
+                <div class="icon">🌍</div>
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" placeholder="Enter Latitude">
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" placeholder="Enter Longitude">
+                <button type="submit">Check Air Quality</button>
+                
+        </div> 
+    </form>
+            <div class="info" id="result">
+                <h2>🌫️ Air Quality Details</h2>
+                <div class="aq-item"><span>AQI</span><span class="value" id="aqi">--</span></div>
+                <div class="aq-item"><span>CO</span><span class="value" id="co">--</span></div>
+                <div class="aq-item"><span>NO₂</span><span class="value" id="no2">--</span></div>
+                <div class="aq-item"><span>O₃</span><span class="value" id="o3">--</span></div>
+                <div class="aq-item"><span>PM2.5</span><span class="value" id="pm25">--</span></div>
+                <div class="aq-item"><span>PM10</span><span class="value" id="pm10">--</span></div>
+                <div class="aq-item"><span>SO₂</span><span class="value" id="so2">--</span></div>
+            </div>
+    
+    <script src="index.js">
+
+    </script>
+
+</body>
+</html>
